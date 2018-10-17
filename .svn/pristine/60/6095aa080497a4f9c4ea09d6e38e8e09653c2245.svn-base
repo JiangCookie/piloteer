@@ -1,0 +1,31 @@
+package com.soft.web;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.soft.services.A;
+
+@Controller
+public class AMainController {
+	@Autowired
+	private A a;
+	@RequestMapping("showMain")
+	public String showMian(){
+		return "A/FirstIndex";
+	}
+	
+	@RequestMapping("buycar")
+	public String showbuycar(ModelMap map){
+		List brand=a.selbrand();
+		List cartype=a.selcartype();
+		List pricequ=a.selpricequ();
+		map.addAttribute("brand", brand);
+		map.addAttribute("cartype", cartype);
+		map.addAttribute("pricequ", pricequ);
+		return "A/BuyIndex";
+	}
+}

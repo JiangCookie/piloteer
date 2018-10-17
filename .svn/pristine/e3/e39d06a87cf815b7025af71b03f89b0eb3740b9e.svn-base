@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.soft.dao.EDao">
+<insert id="zhuce" parameterType="user">
+  insert into users(id,username,password,tel)  values(users_seq.nextval,#{username},#{password},#{tel})
+
+</insert>
+<select id="isName" resultType="int" >
+select count(*) from users where username=#{username}
+</select>
+<select id="isTel" resultType="int" >
+select count(*) from users where tel=#{tel}
+</select>
+<select id="getAllcar" resultType="m">
+select *  from   sellcar s,users u,brand b,condition cc,cartype c,area a where s.userid=u.id and s.brandid=b.id and s.cartypeid=c.id and s.areaid=a.id and s.conditionid=cc.id 
+</select>
+</mapper>

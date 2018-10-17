@@ -1,0 +1,13 @@
+package com.soft.services;
+
+
+
+public interface A {
+<<<<<<< .mine
+	
+||||||| .r3
+=======
+	public abstract List selbrand();
+>>>>>>> .r11
+   
+}

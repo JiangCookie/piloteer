@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.soft.dao.BDao">
+
+ <select id="collect" resultType="m" parameterType="String">
+select c.id id,brand ,cartype,pricesection from collect c,brand b, cartype car ,price p where c.brandid=b.id(+) and  c.cartypeid=car.id(+) and c.priceid=p.id(+) 
+ </select>
+
+
+<delete id="Delcol">
+delete collect where id=#{id}
+</delete>
+
+<select id="indent" resultType="m" parameterType="String">
+select indent,to_char(time,'yyyy-MM-dd') time,brand,cartype from indent ind,brand bra,cartype car where ind.brandid=bra.id(+) and ind.cartypeid=car.id(+)
+ </select>
+<select id="xiadan" resultType="m" parameterType="String">
+select username ,brand,cartype,pricesection from xiadan xia,users use,brand bra,cartype car,price pri where xia.usernameid=use.id and xia.brandid=bra.id and xia.cartypeid=car.id and xia.priceid=pri.id
+</select>
+
+ 
+</mapper>

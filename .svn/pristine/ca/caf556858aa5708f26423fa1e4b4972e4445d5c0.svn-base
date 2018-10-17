@@ -1,0 +1,32 @@
+package com.soft.web;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.RequestMapping;
+import com.soft.services.D;
+
+@Controller
+public class DfreesellController {
+
+	@Autowired
+	private D d;
+//	@RequestMapping("dfree")
+//	public String freesell(){
+//		return "D/freesell";
+//	}
+	
+	
+	@RequestMapping("brand")
+	public String showbrand(Model map){
+		System.out.println("**");
+		List brand=d.getbrand();
+//		System.out.println(list);
+		map.addAttribute("dbrand", brand);
+		return "D/freesell";
+		
+	}
+}

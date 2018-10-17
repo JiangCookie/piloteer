@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.soft.dao.BDao">
+ <delete id="collect" parameterType="m">
+ select sell.id brand,cartype,price from sellcar sell, brand b,cartype c where sell.brandid=b.id(+) and sell.cartypeid=c.id(+) and sell.id=#{id}
+ </delete>
+
+</mapper>

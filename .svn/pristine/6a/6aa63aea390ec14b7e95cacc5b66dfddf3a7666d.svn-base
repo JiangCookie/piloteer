@@ -1,0 +1,20 @@
+package com.soft.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
+
+import com.soft.dao.pojo.Users;
+
+
+
+public interface EDao {
+	public int zhuce(Users users);
+
+public  int  isName(String  username);
+
+public  int  isTel(String  tel);
+public  List  getAllcar();
+}

@@ -1,0 +1,21 @@
+package com.soft.dao;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.stereotype.Repository;
+
+import com.soft.dao.pojo.Emp;
+
+public interface DDao {
+
+	public int delemp(int empno);
+	
+	public int login(Map map);
+	
+	public List getAllEmp();
+	
+	public Emp getOneEmp(String empno);
+
+	public List getAlldept();
+}

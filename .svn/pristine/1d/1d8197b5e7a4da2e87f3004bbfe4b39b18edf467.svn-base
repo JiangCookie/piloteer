@@ -1,0 +1,11 @@
+package com.soft.services;
+
+import java.util.List;
+
+public interface A {
+
+	public abstract List selbrand();
+	public abstract List selcartype();
+	public abstract List selpricequ();
+
+}

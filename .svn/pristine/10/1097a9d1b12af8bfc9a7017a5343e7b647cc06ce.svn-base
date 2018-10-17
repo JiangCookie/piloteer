@@ -1,0 +1,90 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+.div0{
+height:300px;
+}
+  .div1{
+  margin: auto;
+  
+width:500px;
+height:300px;
+background-image:url("img/bb.jpg");
+color:#FFFFFF;
+}
+.table1{
+margin: auto;
+width:400px;
+height:300px;
+	              
+				
+line-height: 30px;
+
+ 
+ 
+}
+		
+		
+			
+
+</style>
+
+<script type="text/javascript">
+
+function ff(){
+	document.form1.submit();
+}
+
+
+</script>
+</head>
+<body>
+<div class="div0"></div>
+<div class="div1">
+<form action="clogin1" name="form1">
+ <table class="table1">
+ <tr>
+  <td colspan="2" align="center" class="font1"></td>
+ </tr>
+ <tr>
+  <td colspan="2" align="center" >
+  ${mess}
+  </td>
+ </tr>
+  <tr>
+  <td align="right">账户名称：</td>
+  <td align="center" ><input type="text" name="username"/>
+  
+</td>
+  </tr>
+  <tr>
+  <td align="right">账户密码：</td>
+  <td align="center" ><input type="password" name="password" />
+ 
+  </td>
+
+  </tr>
+  
+  
+  <tr>
+  <td colspan="2" align="center">
+   
+  <input type="button" value="登录" class="but1" id="login" onclick="ff()">
+  <input type="reset" value="重置" class="but1">
+  </td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><a href="">注册</a></td>
+  </tr>
+ </table>
+
+</form>
+ </div>
+</body>
+</html>

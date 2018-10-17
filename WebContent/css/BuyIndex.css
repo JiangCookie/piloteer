@@ -1,0 +1,77 @@
+body{
+	margin: auto;
+}
+a{
+	color: #495056;
+	text-decoration: none;
+	margin-right: 30px;
+}
+a:hover{
+	color: #22AB38;
+}
+#container{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 1210px;
+}
+hr{
+	color:#E6E6E6;
+}
+/*选项框s */
+.first{
+	width: auto;
+	height: 50px;
+	border: 0.5px solid #E6E6E6;
+	font-size: 15px;
+}
+.noselect{
+	margin-right:20px;
+	color:white;
+	padding-left: 5px;
+	padding-right: 5px;
+	background-color: #22AB38;
+}
+.first input{
+	cursor: pointer;
+	margin-right:20px;
+	background-color: transparent;
+	border:0px;
+	color: #495056;
+}
+.first input:hover{
+	color: #22AB38;
+}
+.title{
+	margin-left: 20px;
+	margin-right:20px;
+	line-height: 50px;
+	color: #7A839A;
+}
+select{
+	width:100px;
+	margin-right: 10px;
+}
+#hh1{
+	color:#22AB38;
+	border: 0.5px solid BLACK;
+}
+.first img{
+	width:15px;
+	height:15px;
+	cursor: pointer;
+}
+#hh:HOVER {
+	border-color: #22AB38;
+}
+.sell a{
+	margin-right: 5px;
+}
+/*选项框e */
+
+
+
+/*显示图片 */
+hr{
+	color:#E6E6E6;
+}

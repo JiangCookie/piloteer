@@ -1,0 +1,66 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/FirstIndex.css"/>
+<script type="text/javascript">
+	window.onload= function(){
+		var  wrap=document.getElementById("wrap");
+		var  prev=document.getElementById("arrow-left");
+		var  next=document.getElementById("arrow-right");
+		var  container=document.getElementById("container");
+		var  img=document.getElementById("img");
+		function newl(newvalue){
+			var newleft=parseInt(wrap.style.left)+newvalue;
+			if(newleft>0){
+				wrap.style.left=-1200+'px';
+				return;
+			}
+			if(newleft<-1200){
+				wrap.style.left=0+'px';
+				return;
+			}
+			wrap.style.left=newleft+'px';
+		}
+		prev.onclick=function(){
+			newl(600);
+		}
+		next.onclick=function(){
+			newl(-600);
+		}
+		var timer;
+		function play(){
+			timer=setInterval(function(){
+				prev.onclick()
+			},2000)
+		}
+		play();
+		function stop(){
+			clearInterval(timer);
+		}
+		container.onmouseover=stop;
+		container.onmouseout=play;
+		img.onclick=function(){
+			location.href="猜数.html";
+		}
+	}
+	
+</script>
+</head>
+<body>
+<div id="container">
+	<div class="nav-list">
+        <a class="fl" href="/ask/" target="mainframe"  title="首页" >首页</a>
+        <a class="fl" href="buycar" target="mainframe"  title="我要买车" >我要买车</a>
+        <a class="fl" href="/ask/" target="mainframe"  title="我要卖车" >我要卖车</a>
+        <a class="fl" href="/ask/" target="mainframe"  title="瓜子服务" >瓜子服务</a>
+        <a class="fl" href="/ask/" target="mainframe"  title="瓜子金融" >瓜子金融</a>
+        <a class="fl" href="/ask/" target="mainframe"  title="毛豆新车" >毛豆新车</a>
+    </div>
+    <iframe name="mainframe" src="" width="1210px" height="3000px" frameborder="0" id="mainframe"></iframe>
+</div>
+</body>
+</html>

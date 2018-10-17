@@ -1,0 +1,27 @@
+package com.soft.services;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.soft.dao.ADao;
+import com.soft.dao.DDao;
+
+import com.soft.dao.pojo.Emp;
+
+@Service
+public class DImp implements D{
+
+	@Autowired
+	private DDao dao;
+	@Override
+	public List getbrand() {
+		return dao.getbrand();
+	}
+
+	
+    
+}

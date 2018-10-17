@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.soft.dao.A1Dao">
+   <!-- 删除 -->
+  <delete id="delemp" parameterType="int" >
+     delete emp where empno=#{bb}
+  </delete>
+  
+  <select id="login" resultType="int" >
+    select count(*)  from usermess where username=#{username}  and password=#{password}
+  </select>
+  
+    <select id="getAllEmp" resultType="m" >
+    select empno,ename,sal,deptno,to_char(hiredate,'yyyy-MM-dd') hiredate from emp
+    </select>
+  
+    <select id="getOneEmp" resultType="emp">
+       select empno,ename,sal,deptno,to_char(hiredate,'yyyy-MM-dd') hiredate from emp where empno=#{empno}
+    </select>
+    
+    <select id="getAlldept" resultType="m">
+       select * from dept
+    </select>
+
+</mapper>

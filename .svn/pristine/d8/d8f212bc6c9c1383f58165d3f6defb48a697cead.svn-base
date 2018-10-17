@@ -1,0 +1,16 @@
+package com.soft.services;
+
+import java.util.List;
+import java.util.Map;
+
+import com.soft.dao.pojo.Users;
+
+
+
+public interface E {
+  
+	public boolean zhuce(Users users);
+	public boolean isname(String username);
+	public boolean istel(String tel);
+	
+}

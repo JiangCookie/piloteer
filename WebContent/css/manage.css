@@ -1,0 +1,24 @@
+body{
+	margin: 0px;
+}
+#container{
+	width:750px;
+    height:440px;
+}
+#Main{
+	display: table;
+	
+}
+.first,.Second{
+	display: table-row;
+}
+.first-line,.Second-line{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	border:1px solid black;
+	padding: 5px 10px;
+}
+.ss{
+	cursor: pointer;
+}

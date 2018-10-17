@@ -1,0 +1,21 @@
+@CHARSET "UTF-8";
+.div0{
+	position: relative;
+	width: 1917px;
+	height: 1005px;	
+}
+.div1{
+	position: absolute;
+	
+	width: 150px;
+	height:220px;
+	border: 1px solid green;
+}
+.div2{
+	position: absolute;
+	left: 500px;
+	width:800;
+	height: 1000;
+	
+	
+}

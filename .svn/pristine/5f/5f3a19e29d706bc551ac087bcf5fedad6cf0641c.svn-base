@@ -1,0 +1,38 @@
+package com.soft.services;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.soft.dao.ADao;
+import com.soft.dao.CDao;
+import com.soft.dao.pojo.Emp;
+
+@Service
+public class CImp implements C{
+	@Autowired
+
+   private CDao dao;
+	@Override
+		public boolean login1(String username, String password) {
+			// TODO Auto-generated method stub
+			System.out.println("=========2===========");
+			Map map=new HashMap();
+			map.put("username", username);
+			map.put("password", password);
+			int i=dao.login1(map);
+			System.out.println("i="+i);
+			
+			return i>0?true:false;
+	}
+	@Override
+	public List getAllIndent() {
+		// TODO Auto-generated method stub
+		return dao.getAllIndent();
+	}
+	
+
+}

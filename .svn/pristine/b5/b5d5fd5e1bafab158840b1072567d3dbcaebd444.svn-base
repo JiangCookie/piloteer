@@ -1,0 +1,63 @@
+package com.soft.services;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.soft.dao.ADao;
+import com.soft.dao.pojo.Emp;
+
+@Service
+public class DImp implements A{
+     @Autowired
+	  private ADao dao;
+	
+	@Override
+	public void test() {
+		System.out.println("******2*********");
+		int i=dao.delemp(7);
+		System.out.println("******3*********"+i);
+	}
+
+	@Override
+	public boolean login(String username,String password) {
+		System.out.println("=========2===========");
+		Map map=new HashMap();
+		map.put("username", username);
+		map.put("password", password);
+		int i=dao.login(map);
+		System.out.println("i="+i);
+		
+		return i>0?true:false;
+	}
+
+	@Override
+	public List getAllEmp() {
+		
+		return dao.getAllEmp();
+	}
+
+	@Override
+	public Emp getOneEmp(String empno) {
+		// TODO Auto-generated method stub
+		return dao.getOneEmp(empno);
+	}
+
+	@Override
+	public Map getAlldept() {
+		List list=dao.getAlldept();
+		Map map=new HashMap();
+		for(int i=0;i<list.size();i++){
+			Map m=(Map)list.get(i);
+			map.put(m.get("DEPTNO"), m.get("DNAME"));
+			
+		}
+		
+		
+		return map;
+	}
+
+}

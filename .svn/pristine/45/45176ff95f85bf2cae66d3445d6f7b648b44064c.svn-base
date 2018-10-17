@@ -1,0 +1,34 @@
+package com.soft.services;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.support.DaoSupport;
+import org.springframework.stereotype.Service;
+
+import com.soft.dao.ADao;
+import com.soft.dao.BDao;
+import com.soft.dao.pojo.Emp;
+
+@Service
+public class BImp implements B{
+    @Autowired BDao dao;
+	@Override
+	public boolean collect(String brand, String cartype, String price) {
+         Map map = new HashMap();
+         map.put("brand", brand);
+         map.put("cartype", cartype);
+         map.put("price", price);
+         int i=dao.collect(map);
+         return i>0?true:false;
+		
+	}
+
+	
+
+	
+   
+
+}

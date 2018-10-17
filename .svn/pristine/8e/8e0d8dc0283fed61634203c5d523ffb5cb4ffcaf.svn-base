@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.soft.dao.ADao">
+  <select id="selbrand" resultType="m">
+  	select * from brand
+  </select>
+  <select id="selcartype" resultType="m">
+  	select * from cartype where brandid=1
+  </select>
+  <select id="selpricequ" resultType="m">
+  	select * from price
+  </select>
+  <select id="selage" resultType="m">
+  	select * from age
+  </select>
+  <select id="selmile" resultType="m">
+  	select * from mile
+  </select>
+  <select id="seloil" resultType="m">
+  	select * from oil
+  </select>
+  <select id="selolistandard" resultType="m">
+  	select * from olistandard
+  </select>
+  <select id="selseat" resultType="m">
+  	select * from seat
+  </select>
+  <select id="seltypeoil" resultType="m">
+  	select * from typeoil
+  </select>
+  <select id="selcolor" resultType="m">
+  	select * from color
+  </select>
+  <select id="selarea" resultType="m">
+  	select * from area
+  </select>
+  
+  <select id="selcartype1" resultType="m">
+  	select * from cartype,brand where brand.id=cartype.brandid and brand.brand=#{id}
+  </select> 
+  <select id="selbrandname" resultType="m">
+  	select brand from brand where brand.id=#{id}
+  </select> 
+  
+  <select id="selcartypename" resultType="m">
+  	select brand from cartype where cartype.id=#{id}
+  </select>
+</mapper>

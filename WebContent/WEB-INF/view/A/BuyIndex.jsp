@@ -1,0 +1,143 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>我要买车</title>
+<link rel="stylesheet" type="text/css" href="css/BuyIndex.css"/>
+<script type="text/javascript">
+	function sub(kk){
+		document.getElementById("brand").value=kk;
+		document.form1.submit();
+	}
+	function sub1(kk){
+		document.getElementById("brand").value="${brandid}";
+		document.getElementById("cartype").value=kk;
+		document.form1.submit();
+	}
+	function sub2(kk){
+		document.getElementById("brand").value="${brandid}";
+		document.getElementById("cartype").value="${cartypeid}";
+		document.getElementById("pricequ").value=kk;
+		document.form1.submit();
+	}
+	function sub3(){
+		document.getElementById("brand").value="${brandid}";
+		document.getElementById("cartype").value="${cartypeid}";
+		document.getElementById("pricequ").value="${pricequid}";
+		document.form1.submit();
+	}
+</script>
+</head>
+<body>
+<div id="container">
+	<hr>
+	<form action="buycar" name="form1">
+		<input type="hidden" id="brand" name="brand" />
+		<input type="hidden" id="cartype" name="cartype" />
+		<input type="hidden" id="pricequ" name="pricequ" />
+		<div class="first">
+			<label class="title">品牌</label>
+			<label class="noselect">不限</label>
+			<c:forEach items="${brand }" var="b">
+				<input type="button" name="brandname"  value="${b.BRAND }" onclick="sub('${b.BRAND}')"/>
+			</c:forEach>
+			
+		</div>
+		<div class="first">
+			<label class="title">车系</label>
+			<label class="noselect">不限</label>
+			<c:forEach items="${cartype }" var="b">
+				<input type="button" name="cartype"  value="${b.CARTYPE }" onclick="sub1('${b.CARTYPE}')"/>	
+			</c:forEach>
+		</div>
+		<div class="first">
+			<label class="title">价格</label>
+			<label class="noselect">不限</label>
+			<c:forEach items="${pricequ }" var="b">
+				<input type="button" name="brand"  value="${b.PRICESECTION}" onclick="sub2('${b.PRICESECTION}')"/>		
+			</c:forEach>
+		</div>
+		<div class="first">
+			<label class="title">更多</label>
+			<select name="ageo">
+				<option value="">车龄</option>
+				<c:forEach items="${age }" var="b">
+					<option value="${b.AGE }" onclick="sub3('${b.AGE}')">${b.AGE }</option>		
+				</c:forEach>				
+			</select>
+			<select name="mile">
+				<option value="">里程</option>
+				<c:forEach items="${mile }" var="b">
+					<option value="${b.MILE }">${b.MILE }</option>		
+				</c:forEach>
+			</select>
+			<select name="oil">
+				<option value="">排量</option>
+				<c:forEach items="${oil }" var="b">
+					<option value="${b.OIL }">${b.OIL }</option>		
+				</c:forEach>
+			</select>
+			<select name="olistandard">
+				<option value="">排放标准</option>
+				<c:forEach items="${olistandard }" var="b">
+					<option value="${b.STANDARD }">${b.STANDARD }</option>		
+				</c:forEach>
+			</select>
+			<select name="seat">
+				<option value="">座位数</option>
+				<c:forEach items="${seat }" var="b">
+					<option value="${b.NUM }">${b.NUM }</option>		
+				</c:forEach>
+			</select>
+			<select name="typeoil">
+				<option value="">燃油类型</option>
+				<c:forEach items="${typeoil }" var="b">
+					<option value="${b.TYPE}">${b.TYPE}</option>		
+				</c:forEach>
+			</select>
+			<select name="color">
+				<option value="">颜色</option>
+				<c:forEach items="${color }" var="b">
+					<option value="${b.COLOR }">${b.COLOR }</option>		
+				</c:forEach>
+			</select>
+			<select name="area">
+				<option value="">车牌所在地</option>
+				<c:forEach items="${area }" var="b">
+					<option value="${b.AREA }">${b.AREA }</option>		
+				</c:forEach>
+			</select>
+			<input type="button" value="搜索" onclick="sub3()">
+		</div>	
+		<div class="first sell">
+			<label class="title">当前筛选</label>
+			<c:forEach items="${listname }" var="b">
+				<a href="" id="hh1">${b}</a>
+				<a href="" id="hh"><img  src="img/cha.png"/></a>
+			</c:forEach>			
+		</div>	
+	<br>
+	<br>
+	<br>
+	<label>全部</label>
+    <hr>
+    <div class="Photo">
+     <%
+			int nowpage=(int)request.getAttribute("nowpage");  //当前页数
+			int totalpage=(int)request.getAttribute("totalpage"); //总页数
+			if(nowpage>1){%>
+				<a href="FYEmpServlet?page=<%=nowpage-1 %>" target="mainframe">上一页</a>
+			<%}%>
+			<% if(nowpage<totalpage){%>
+				<a href="FYEmpServlet?page=<%=nowpage+1 %>" target="mainframe">下一页</a>	
+			<%}%>
+			<%=nowpage %>/<%=totalpage %>页
+    
+    </div>	
+    </form>		
+</div>
+</body>
+</html>

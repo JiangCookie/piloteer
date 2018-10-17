@@ -1,0 +1,22 @@
+body{
+	margin: auto;
+}
+#container{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 1210px;
+}
+a{
+	color: black;
+	text-decoration: none;
+	margin-right: 30px;
+}
+a:hover{
+	color: #22AB38;
+}
+.nav-list{
+	line-height: 50px;
+	height: 50px;
+}
+

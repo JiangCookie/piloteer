@@ -1,0 +1,24 @@
+package com.soft.services;
+
+import java.util.List;
+import java.util.Map;
+
+import com.soft.dao.pojo.Emp;
+
+public interface A {
+   public void test();
+   
+   
+   
+   public boolean login(String username,String password);
+   
+   
+   public  List getAllEmp();
+   
+   
+   public Emp  getOneEmp(String empno);
+   
+   
+   public  Map getAlldept();
+   
+}

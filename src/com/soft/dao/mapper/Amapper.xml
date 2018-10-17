@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.soft.dao.ADao">
+  <select id="selbrand" resultType="m">
+  	select * from brand
+  </select>
+  <select id="selcartype" resultType="m">
+  	select * from cartype where brandid=1
+  </select>
+  <select id="selpricequ" resultType="m">
+  	select * from price
+  </select>
+  <select id="selage" resultType="m">
+  	select * from age
+  </select>
+  <select id="selmile" resultType="m">
+  	select * from mile
+  </select>
+  <select id="seloil" resultType="m">
+  	select * from oil
+  </select>
+  <select id="selolistandard" resultType="m">
+  	select * from olistandard
+  </select>
+  <select id="selseat" resultType="m">
+  	select * from seat
+  </select>
+  <select id="seltypeoil" resultType="m">
+  	select * from typeoil
+  </select>
+  <select id="selcolor" resultType="m">
+  	select * from color
+  </select>
+  <select id="selarea" resultType="m">
+  	select * from area
+  </select>
+  
+  <select id="selcartype1" resultType="m">
+  	select * from cartype,brand where brand.id=cartype.brandid and brand.brand=#{id}
+  </select> 
+  <select id="selbrandname" resultType="m">
+  	select brand from brand where brand.id=#{id}
+  </select> 
+  
+  <select id="selcartypename" resultType="m">
+  	select brand from cartype where cartype.id=#{id}
+  </select>
+  
+  <!-- 分页   -->
+  <select id="getRows" resultType="int">
+	select count(*)
+    from bycar,users,age,brand,cartype,mile,oil,olistandard,seat,color 
+	where bycar.username=users.id and bycar.ageid=age.id and bycar.brandid=brand.id 
+	and bycar.type=cartype.id and bycar.mileid=mile.id and bycar.oil=oil.id 
+	and bycar.standardid=olistandard.id and bycar.numberid=seat.id 
+	and bycar.color=color.id 
+  </select>
+  
+  <select id="getOnePageEmp" parameterType="m" resultType="m">
+	select * from (select rownum rnum, bycar.id,users.USERNAME,age,brand,mile,oil.oil,standard,num,
+	cartype.cartype,color.color from bycar,users,age,brand,cartype,mile,oil,olistandard,
+	seat,color 
+	where bycar.username=users.id and bycar.ageid=age.id and bycar.brandid=brand.id 
+	and bycar.type=cartype.id and bycar.mileid=mile.id and bycar.oil=oil.id 
+	and bycar.standardid=olistandard.id and bycar.numberid=seat.id 
+	and bycar.color=color.id )  where rnum &gt; #{startnum} and rnum &lt;= #{endnum}
+  </select>
+
+  
+</mapper>

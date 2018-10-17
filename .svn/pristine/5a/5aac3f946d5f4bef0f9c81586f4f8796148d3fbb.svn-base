@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>我要买车</title>
+<link rel="stylesheet" type="text/css" href="css/BuyIndex.css"/>
+</head>
+<body>
+<div id="container">
+	<hr>
+	<div class="first">
+		<label class="title">品牌</label>
+		<label class="noselect">不限</label>
+		<c:forEach items="${brand }" var="b">
+			<a href="">${b.BRAND }</a>		
+		</c:forEach>
+		
+	</div>
+	<div class="first">
+		<label class="title">车系</label>
+		<label class="noselect">不限</label>
+		<c:forEach items="${cartype }" var="b">
+			<a href="">${b.CARTYPE }</a>		
+		</c:forEach>
+	</div>
+	<div class="first">
+		<label class="title">价格</label>
+		<label class="noselect">不限</label>
+		<c:forEach items="${pricequ }" var="b">
+			<a href="">${b.PRICESECTION}</a>		
+		</c:forEach>
+	</div>					
+</div>
+</body>
+</html>

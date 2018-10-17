@@ -1,0 +1,51 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+@IMPORT url("<%=request.getContextPath() %>/css/Bmy.css");
+</style>
+
+</head>
+<body>
+	<div class="div0">
+<div class="div1">
+<table >
+<tr>
+	<td>
+		个人信息
+</tr>
+<tr>
+	<td>
+		用户名:
+	</td>
+</tr>
+<tr>
+    <td>
+		<a href="indent" target="iframe1">订单信息</a>
+	</td>
+</tr>
+<tr>
+	<td>
+		<a href="xiadan" target="iframe1">下单信息</a>
+	</td>
+</tr>
+<tr>
+	<td>
+		<a href="collect" target="iframe1">收藏</a>
+	</td>
+</tr>
+</table>
+</div>
+<div class="div2">
+<iframe src="collect" width="1000" height="800"  name="iframe1">
+	
+	
+</iframe>
+</div>
+</div>
+</body>
+</html>

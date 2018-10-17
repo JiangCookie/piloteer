@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "mybatis-3-mapper.dtd" >
+<mapper namespace="com.soft.dao.CDao">
+<select id="login1" resultType="int">
+select count(*) from users where username=#{username} and password=#{password}
+
+
+</select>
+<select id="getAllIndent" resultType="m"></select>
+  
+
+</mapper>
